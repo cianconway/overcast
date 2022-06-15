@@ -2,13 +2,24 @@ import { useState, useEffect } from 'react';
 // import './App.css';
 import File from './components/File';
 import { db } from './firebase-config';
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import UploadForm from './components/UploadForm';
 
 
 
 function App() {
-  const[assets, setFiles] = useState([]);
+  
   const fileReference = collection(db, "assets");
+
+// useState Methods
+  const[assets, setFiles] = useState([]);
+  const [newFolder, setNewFolder] = useState(0);
+  const [newProject, setNewProject] = useState(0);
+  const [newStorageID, setNewStorageID] = useState(0);
+  const [newCreatedBy, setNewCreatedBy] = useState("");
+  const [newCreatedAt, setNewCreatedAt] = useState("");
+
+
 
   useEffect(() => {
     const getFiles = async () => {
@@ -18,6 +29,17 @@ function App() {
 
     getFiles();
   }, [])
+
+  const createFile = async () => {
+
+    await addDoc(fileReference, { 
+      folder_uuid: newFolder, 
+      project_uuid: newProject, 
+      created_by: newCreatedBy,
+      created_at: newCreatedAt
+    })
+    
+  }
 
   return (
     <div className="App">
@@ -30,6 +52,14 @@ function App() {
             </div>
             )
           })}
+          <UploadForm 
+            setNewFolder={setNewFolder}
+            setNewProject={setNewProject}
+            setNewStorageID={setNewStorageID}
+            setNewCreatedBy={setNewCreatedBy}
+            setNewCreatedAt={setNewCreatedAt}
+            createFile={createFile}
+          />
         </div>
       </header>
     </div>
