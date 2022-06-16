@@ -6,4 +6,9 @@ $accent: #97D8C4;
 $white: #EFF2F1;
 $contrast: #F4B942;
 
+//Folder Colours
+$folder-color: #FFC107;
+$folder-color-light: ligthen($folder-color, 7.5%);
+$folder-color-dark: darken($folder-color, 7.5%);
+
 // Fonts 
