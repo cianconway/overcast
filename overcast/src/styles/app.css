@@ -25,4 +25,9 @@
     margin: 10px;
     display: block;
   }
+}
+@media only screen and (max-width: 375px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=app.css.map */
