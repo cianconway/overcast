@@ -11,4 +11,6 @@ $folder-color: #FFC107;
 $folder-color-light: ligthen($folder-color, 7.5%);
 $folder-color-dark: darken($folder-color, 7.5%);
 
-// Fonts 
+// Breakpoints
+$breakpoint-tablet: 768px; 
+$breakpoint-mobile: 375px; 

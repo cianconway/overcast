@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FaFolderOpen } from "react-icons/fa";
+import { IconContext } from "react-icons";
+
 import "../styles/file.css";
 
 class File extends React.Component {
@@ -29,6 +32,11 @@ class File extends React.Component {
                     <div className={isActive ? "card active" : "card"} onClick={this.handleToggle}>
                         <div className="content-box">
                             <div className="content">
+                            <IconContext.Provider
+                                value={{ color: 'white', size: '70px' }}
+                            >                                   
+                                <FaFolderOpen />
+                            </IconContext.Provider>
                                 <h2 className="file-item">
                                     Folder Name: { folder_uuid }
                                 </h2>

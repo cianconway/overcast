@@ -1,10 +1,12 @@
 import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 
+import "../styles/form.css";
 class UploadForm extends Component {
 
     render() {
         return (
+            <React.Fragment>
             <div className='form'>
                 <input type="text" className="form-item" placeholder='Folder UUID' 
                     onChange={(event) => {
@@ -25,8 +27,9 @@ class UploadForm extends Component {
                         this.props.setNewCreatedAt(event.target.value);
                     }}
                 />
-                <button onClick={ this.props.createFile } className="form-button">Upload Asset</button>
             </div>
+            <button onClick={ this.props.createFile } className="form-button">Upload Asset</button>
+            </React.Fragment>
         );
     }
 }

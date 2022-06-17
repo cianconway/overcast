@@ -1,4 +1,28 @@
 .main {
-  display: inline-flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.main .file {
+  margin: 20px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+  .main .container {
+    align-items: normal;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  .main .container .card {
+    max-width: 100%;
+    width: 200px;
+    margin: 10px;
+    display: block;
+  }
 }/*# sourceMappingURL=app.css.map */

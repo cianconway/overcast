@@ -33,7 +33,7 @@ function App() {
 
   const createFile = async () => {
 
-    await setDoc(fileReference, { 
+    await addDoc(fileReference, { 
       folder_uuid: newFolder, 
       project_uuid: newProject, 
       created_by: newCreatedBy,

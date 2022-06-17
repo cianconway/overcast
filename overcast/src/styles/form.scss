@@ -1,2 +1,78 @@
 @import './variables.scss';
 
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px;
+
+    input {
+        border: none;
+        padding: 15px 20px;
+        border-radius: 25px;
+        background: rgba(206, 211, 220,.4);
+        
+    }
+
+}
+
+button {
+    padding: 15px 20px;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(0deg, rgba(93,166,243,1) 0%, rgba(74,132,194,1) 100%);
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 0 auto;
+
+    &:hover {
+        color: rgba(93,166,243,1);
+        background: transparent;
+        box-shadow:none;
+        cursor: pointer;
+        animation-timing-function: ease-in;
+    }
+
+    &:active {
+        &::after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+    }
+
+    // &::after {
+    //     content: "";
+    //     background: #1abc9c;
+    //     display: block;
+    //     position: absolute;
+    //     padding-top: 300%;
+    //     padding-left: 350%;
+    //     margin-left: -20px !important;
+    //     margin-top: -120%;
+    //     opacity: 0;
+    //     transition: all 0.8s
+    // }
+}
+
+@media only screen and (max-width: $breakpoint-tablet) {
+    .form {
+        display: grid;
+        margin: 20px;
+        grid-template-columns: 300px;
+        width: 200px;
+        margin: 0 auto;
+        padding-top: 40px;
+        justify-content: center;
+
+        input {
+            margin: 5px;
+            width: 100%;
+        }
+
+        button {
+            margin: 5px;
+        }
+    }
+}
