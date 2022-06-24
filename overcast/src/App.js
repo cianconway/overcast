@@ -49,11 +49,14 @@ function App() {
   //   await updateDoc(fieldDoc, newFields);
   // };
 
-  const deleteFile = async(id) => {
-    const fieldDoc = doc(db, "assets", id);
-    await deleteDoc(doc(db, "assets", id));
-    console.log('update values', id);
+
+  // delete File from firebase and from the state
+
+  const deleteFile = async (id) => {
+    await deleteDoc(fileReference, id);
+    setFiles(assets.filter((file) => file.id !== id))
   }
+  
 
   return (
     <div className="App">
